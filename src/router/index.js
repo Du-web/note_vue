@@ -11,7 +11,7 @@ export default new Router({
     routes: [
         {path: '/note', component: Note},
         {path: '/user', component: User},
-        {path: '/detail/:id', component: UserDetail},
+        {path: '/detail/:id/:name/:age', component: UserDetail},
         {path: '/', redirect: '/note'},
     ]
 })
