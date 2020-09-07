@@ -4,8 +4,10 @@
         <input type="text" v-model="msg">
         <button @click="addnote">发表留言</button>
         <ol>
-            <li v-for="(message, index) in msg_list">{{message}}</li>
-            <button @click="addone">删除</button>
+            <li v-for="(message, index) in msg_list" :key="index">
+                <span>{{message}}</span>
+                <a href="javascript:void (0);" @click="delone(index)">删除</a>
+            </li>
         </ol>
 
     </div>
@@ -30,9 +32,12 @@
                     this.msg = '';
                 }
             },
-            addone(){
-                alert('aaa')
-            }
+            delone(num){
+                let msg1 = this.msg_list.splice(num, 1);
+                console.log(msg1)
+                localStorage.removeItem('msgs');
+                localStorage.msgs = JSON.stringify(this.msg_list);
+            },
         }
     }
 </script>
