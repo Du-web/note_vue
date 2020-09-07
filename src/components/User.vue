@@ -19,10 +19,8 @@
                 <td>{{user.age}}</td>
                 <td>
                     <a href="javascript:void (0);" @click="delone(index)">删除</a>
-                     | 查看详情
+                     | <router-link :to="`/detail/${index}`">用户详情</router-link>
                 </td>
-<!--                <td>删除| <router-link :to="`/detail/${user.id}`">查看用户详情</router-link> |-->
-<!--                </td>-->
             </tr>
         </table>
     </div>

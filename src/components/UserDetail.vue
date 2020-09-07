@@ -1,5 +1,7 @@
 <template>
-    $END$
+    <div>
+        let id = {{$route.params.id}}
+    </div>
 </template>
 
 <script>
