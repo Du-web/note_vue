@@ -9,6 +9,8 @@
                 <a href="javascript:void (0);" @click="delone(index)">删除</a>
             </li>
         </ol>
+        <span>总数量:{{msg_list.length}}条</span>
+        <input type="button" value="删除所有" @click="delall" v-show="msg_list.length!=0">
 
     </div>
 </template>
@@ -38,6 +40,10 @@
                 localStorage.removeItem('msgs');
                 localStorage.msgs = JSON.stringify(this.msg_list);
             },
+            delall(){
+                this.msg_list = [];
+                localStorage.removeItem('msgs');
+            }
         }
     }
 </script>
