@@ -2,6 +2,7 @@
     <div id="app">
         <h3>管理系统</h3>
         <router-link to="/note">留言板</router-link>
+        <router-link to="/user">用户列表</router-link>
 
         <hr>
         <router-view></router-view>
