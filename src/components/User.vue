@@ -32,7 +32,7 @@
             return {
                 username: '',
                 age: '',
-                users: [],
+                users: localStorage.user_list ? JSON.parse(localStorage.user_list) : [],
             }
         },
         methods: {
@@ -41,6 +41,7 @@
                     name: this.username,
                     age: this.age
                 });
+                localStorage.user_list = JSON.stringify(this.users);
                 this.username = '';
                 this.age = '';
             }
