@@ -1,14 +1,18 @@
 <template>
-  <div id="app">
+    <div id="app">
+        <h3>管理系统</h3>
+        <router-link to="/note">留言板</router-link>
 
+        <hr>
+        <router-view></router-view>
 
-  </div>
+    </div>
 </template>
 
 <script>
-export default {
-  name: 'App'
-}
+    export default {
+        name: 'App'
+    }
 </script>
 
 <style>
