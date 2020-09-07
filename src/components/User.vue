@@ -17,7 +17,10 @@
                 <td>{{index}}</td>
                 <td>{{user.name}}</td>
                 <td>{{user.age}}</td>
-                <td>删除 | 查看详情</td>
+                <td>
+                    <a href="javascript:void (0);" @click="delone(index)">删除</a>
+                     | 查看详情
+                </td>
 <!--                <td>删除| <router-link :to="`/detail/${user.id}`">查看用户详情</router-link> |-->
 <!--                </td>-->
             </tr>
@@ -44,7 +47,12 @@
                 localStorage.user_list = JSON.stringify(this.users);
                 this.username = '';
                 this.age = '';
-            }
+            },
+            delone(num){
+                this.users.splice(num, 1);
+                localStorage.removeItem('user_list');
+                localStorage.user_list = JSON.stringify(this.users);
+            },
         }
 
 
